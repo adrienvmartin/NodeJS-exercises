@@ -1,27 +1,13 @@
 const express = require('express');
-const http = require('http');
-const port = 3000;
 const app = express();
+const port = 3000;
 
-app.listen(3000, function () {
-    console.log('This HTTP server is running on port 3000');
+// configure the default route and send a text as response
+app.get('/', function(request, response) {
+  response.send("Congrats you're using your first Node.js and Express as Web Server");
 });
 
-app.get('/', function (request, response) {
-    response.send("Congrats, you're using your first Node.js and Express as Web Server");
+// configure the port that express is going to listen to
+app.listen(port, function() {
+  console.log(`The HTTP server is running on port ${port}`);
 });
-
-const requestHandler = (request, response) => {
-    console.log(request.url)
-    response.end('Hello Node.js Server!')
-}
-
-const server = http.createServer(requestHandler)
-
-server.listen(port, (err) => {
-    if (err) {
-        return console.log(`Unable to start the server on port ${port}`, err)
-    }
-
-    console.log(`This HTTP server is running on port ${port}`)
-})
