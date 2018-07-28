@@ -21,7 +21,8 @@ app.get('/jokes/', function (request, response) {
 })
 
 app.get('/joke', function (request, response) {
-    response.send(getRandomJoke.body);
+    let joke = oneLinerJoke.getRandomJoke();
+    response.send(`${joke.body}`);
 })
 
 app.post('/joke', function (request, response) {
