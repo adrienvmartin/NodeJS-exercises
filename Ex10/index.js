@@ -2,9 +2,6 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-let oneLinerJoke = require('one-liner-joke');
-let getRandomJoke = oneLinerJoke.getRandomJoke();
-
 app.get('/', function(request, response) {
   response.send("Congrats you're using your first Node.js and Express as Web Server");
 });
@@ -22,7 +19,7 @@ app.get('/jokes/', function (request, response) {
 
 app.get('/joke', function (request, response) {
     let joke = oneLinerJoke.getRandomJoke();
-    response.send(`${joke.body}`);
+    response.send(joke.body);
 })
 
 app.post('/joke', function (request, response) {
