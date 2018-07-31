@@ -2,7 +2,21 @@ doctype html
 html(lang='en')
   head
     title= title
+    style.
+      body { 
+        color: black;
+        font-family: Arial, Helvetica;
+        font-weight: bold;
+      }
+      .container {
+        color: green;
+        font-size: 3;
+      }
   body
     h1= message
     div.container
      p Starting using Pug!
+
+script(type='text/javascript').  
+  const message = 'Using JS from PUG';
+  alert(message);
