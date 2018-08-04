@@ -6,6 +6,8 @@ block scripts
     alert('alert from a block');
 
 block content
+  - const ps4 = {title: 'PS4 Pro', description: 'Best console ever, so far..' }
+  - const xbox = {title: 'XBOX', description: 'Other great console' }
   h1= message
   div.container
     p Starting using Pug!
@@ -17,10 +19,10 @@ block content
   a.foo_link(href='about.html', target='_blank') About Us
   div#main main content
   div.red text in red
-    section  
-      +product({title: 'PS4 Pro', description: 'Best console ever, so far..' })
     section
-      +product({title: 'XBOX', description: 'Other great console' })
+      +product(ps4)
+    section
+      +product(xbox)
 
 block foot
   div This footer content comes from a block
