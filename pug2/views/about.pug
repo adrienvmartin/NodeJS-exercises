@@ -13,5 +13,10 @@ block content
         while n < 4
             li= n++
 
+    - var values = [];
+    ul
+        each val in values.length ? values : ['There are no values']
+            li= val
+
 
 block foot
