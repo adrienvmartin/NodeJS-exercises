@@ -1,0 +1,17 @@
+extends ./layout.pug
+
+block scripts
+
+block content
+    - hookCharacters = ['Peter', 'Nana', 'Captain Hook']
+    ul
+        each character, index in hookCharacters
+            li= index + ': ' + character
+
+    - var n = 0;
+    ul
+        while n < 4
+            li= n++
+
+
+block foot
