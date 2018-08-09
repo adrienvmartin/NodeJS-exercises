@@ -5,11 +5,12 @@ html(lang='en')
     style(type="text/css").
       body { 
         color:  black;
+        font-family: Arial, Helvetica, sans-serif;
       }
     block scripts
   body
     block content
       ul
         each val in documents
-          li= val._id + ': ' + val.name
+          li= `Superhero Name: ` + val.name
     block foot
