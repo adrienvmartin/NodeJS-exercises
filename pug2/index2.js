@@ -17,18 +17,18 @@ const url = 'mongodb://localhost:27017';
 
 // configure the default route and send a text as response
 app.get('/', (req, res) => {
-	MongoClient.connect(url, function(err, client) {
-		const db = client.db('comics');
-		const collection = db.collection('superheroes');
+    MongoClient.connect(url, function (err, client) {
+        const db = client.db('comics');
+        const collection = db.collection('superheroes');
 
-		collection.find({}).toArray((error, documents) => {
-			client.close();
-			res.render('index2', { documents: documents });
-		});
-	});
+        collection.find({}).toArray((error, documents) => {
+            client.close();
+            res.render('index2', { documents: documents });
+        });
+    });
 });
 
 // configure the port that express is going to listen to
 app.listen(3000, function () {
-	logger.info('Example app listening on port 3000!');
+    logger.info('Example app listening on port 3000!');
 });
