@@ -15,6 +15,8 @@ app.set('view engine', 'pug')
 const MongoClient = require('mongodb').MongoClient;
 const url = 'mongodb://localhost:27017';
 
+// when trying to add new items to database, the website will not load and gets an error, but when I close the server and restart it without the code it works fine and the new items are in the collection - why?
+
 // configure the default route and send a text as response
 app.get('/', (req, res) => {
     MongoClient.connect(url, function (err, client) {
